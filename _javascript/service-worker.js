@@ -4,7 +4,7 @@
 
 const cacheName = "link-tagger-cache-v1";
 
-const precacheResources = ['/', '/index.html', '/css/main.css', '/lib/main.js'];
+const precacheResources = ['/', '/index.html', '/css/main.css', '/lib/main.js', '/images/made-with-bulma.png'];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
