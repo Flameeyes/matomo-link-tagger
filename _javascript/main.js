@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-export function inputChanged() {
+function inputChanged() {
   let input = document.getElementById("inputUrl");
 
   let inputURL = new URL(input.value);
@@ -21,7 +21,7 @@ function updateURL(inputURL, socialElement) {
   socialElement.value = inputURL.href;
 }
 
-export function copyURL(urlId) {
+function copyURL(urlId) {
   let urlInput = document.getElementById(urlId);
 
   urlInput.select();
@@ -29,3 +29,17 @@ export function copyURL(urlId) {
 
   navigator.clipboard.writeText(urlInput.value);
 }
+
+window.addEventListener('load', async () => {
+  let inputUrl = document.getElementById('inputUrl');
+
+  ['change', 'keyup', 'paste'].forEach(event => {
+    inputUrl.addEventListener(event, inputChanged);
+  });
+
+  let allUrls = document.getElementsByClassName("tagger-copy-urls");
+
+  Array.prototype.forEach.call(allUrls, element => {
+    element.addEventListener('click', () => { copyURL(element.getAttribute('data-url-element')) });
+  });
+});
