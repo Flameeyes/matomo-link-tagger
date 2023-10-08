@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2017 Jeremy Thomas
+
+SPDX-License-Identifier: MIT
+-->
+
 # Start package for [Bulma](http://bulma.io)
 
 Tiny npm package that includes the `npm` **dependencies** you need to **build your own website** with Bulma.
