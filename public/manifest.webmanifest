@@ -28,5 +28,12 @@
   ],
   "description": "Sharable links tagged for Matomo",
   "screenshots": [
-  ]
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "url": "url"
+    }
+  }
 }

@@ -5,14 +5,20 @@
 function inputChanged() {
   let input = document.getElementById("inputUrl");
 
-  let inputURL = new URL(input.value);
-  inputURL.searchParams.set("mtm_campaign", "social");
+  try {
+    let inputURL = new URL(input.value);
 
-  let allInputURLs = document.getElementsByClassName("tagger-social-urls");
+    inputURL.searchParams.set("mtm_campaign", "social");
 
-  Array.prototype.forEach.call(allInputURLs, element => {
-    updateURL(inputURL, element);
-  });
+    let allInputURLs = document.getElementsByClassName("tagger-social-urls");
+
+    Array.prototype.forEach.call(allInputURLs, element => {
+      updateURL(inputURL, element);
+    });
+  } catch (err) {
+    // ignore errors if the input is not a valid URL.
+    return;
+  }
 }
 
 function updateURL(inputURL, socialElement) {
@@ -36,6 +42,11 @@ window.addEventListener('load', async () => {
   ['change', 'keyup', 'paste'].forEach(event => {
     inputUrl.addEventListener(event, inputChanged);
   });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  inputUrl.value = urlParams.get('url');
+  // trigger the change event, which is otherwise not triggered.
+  inputChanged();
 
   let allUrls = document.getElementsByClassName("tagger-copy-urls");
 
