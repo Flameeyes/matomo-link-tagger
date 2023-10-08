@@ -42,4 +42,13 @@ window.addEventListener('load', async () => {
   Array.prototype.forEach.call(allUrls, element => {
     element.addEventListener('click', () => { copyURL(element.getAttribute('data-url-element')) });
   });
+
+  if ('serviceWorker' in navigator) {
+    try {
+      let reg = await navigator.serviceWorker.register('/lib/service-worker.js');
+      console.log('Service worker registered! 😎', reg);
+    } catch (err) {
+      console.log('😥 Service worker registration failed: ', err);
+    }
+  }
 });
