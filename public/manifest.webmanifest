@@ -1,0 +1,32 @@
+{
+  "short_name": "link-tagger",
+  "name": "Link Tagger",
+  "icons": [
+    {
+      "src": "/images/tagger-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "150x150"
+    },
+    {
+      "src": "/images/tagger-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/tagger-500.png",
+      "type": "image/png",
+      "sizes": "500x500"
+    }
+  ],
+  "id": "/",
+  "start_url": "",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+  ],
+  "description": "Sharable links tagged for Matomo",
+  "screenshots": [
+  ]
+}
