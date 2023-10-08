@@ -56,7 +56,7 @@ window.addEventListener('load', async () => {
 
   if ('serviceWorker' in navigator) {
     try {
-      let reg = await navigator.serviceWorker.register('/lib/service-worker.js');
+      let reg = await navigator.serviceWorker.register('/service-worker.js', {scope: '.'});
       console.log('Service worker registered! 😎', reg);
     } catch (err) {
       console.log('😥 Service worker registration failed: ', err);

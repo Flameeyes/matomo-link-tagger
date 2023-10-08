@@ -17,5 +17,6 @@ _gh_pages
 _site
 node_modules
 
-/public/lib/
-/public/css/
+/public/main.js
+/public/service-worker.js
+/public/css/main.css
