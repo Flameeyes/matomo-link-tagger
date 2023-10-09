@@ -43,8 +43,8 @@ window.addEventListener('load', async () => {
     inputUrl.addEventListener(event, inputChanged);
   });
 
-  const urlParams = new URLSearchParams(window.location.search);
-  inputUrl.value = urlParams.get('url');
+  const urlParams = new URL(window.location).searchParams;
+  inputUrl.value = urlParams.get('url') || urlParams.get('text') || urlParams.get('body');
   // trigger the change event, which is otherwise not triggered.
   inputChanged();
 
