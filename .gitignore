@@ -20,3 +20,4 @@ node_modules
 /public/main.js
 /public/service-worker.js
 /public/css/main.css
+/public/index.html
