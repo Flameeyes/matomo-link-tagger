@@ -17,6 +17,7 @@ repos:
         additional_dependencies:
           - eslint
           - eslint-plugin-react
+          - "@next/eslint-plugin-next"
 -   repo: https://github.com/fsfe/reuse-tool
     rev: v2.1.0
     hooks:
