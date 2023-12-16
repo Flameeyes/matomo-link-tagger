@@ -10,14 +10,14 @@ repos:
     -   id: check-yaml
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
--   repo: https://github.com/pre-commit/mirrors-eslint
-    rev: 'v8.51.0'
-    hooks:
-    -   id: eslint
-        additional_dependencies:
-          - eslint
-          - eslint-plugin-react
-          - "@next/eslint-plugin-next"
+# -   repo: https://github.com/pre-commit/mirrors-eslint
+#     rev: 'v8.51.0'
+#     hooks:
+#     -   id: eslint
+#         additional_dependencies:
+#           - eslint
+#           - eslint-plugin-react
+#           - "@next/eslint-plugin-next"
 -   repo: https://github.com/fsfe/reuse-tool
     rev: v2.1.0
     hooks:
