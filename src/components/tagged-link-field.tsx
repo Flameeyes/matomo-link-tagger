@@ -4,7 +4,8 @@
 
 'use client'
 
-import { useRef } from "react";
+import { ShareGeneratorProps } from "@/lib/share-link-api";
+import { cloneElement, isValidElement, useRef, Children, PropsWithChildren } from "react";
 
 type TaggedLinkFieldProps = {
     name: string;
@@ -13,7 +14,7 @@ type TaggedLinkFieldProps = {
     contentId?: string;
 }
 
-const TaggedLinkField = ({ name, keyword, value, contentId }: TaggedLinkFieldProps) => {
+const TaggedLinkField = ({ name, keyword, value, contentId, children }: PropsWithChildren<TaggedLinkFieldProps>) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     function generateTaggedURL(inputUrl: string | undefined): string {
@@ -50,10 +51,19 @@ const TaggedLinkField = ({ name, keyword, value, contentId }: TaggedLinkFieldPro
         }
     }
 
+    const taggedProps: ShareGeneratorProps = { url: taggedUrl };
+
+    const taggedChildren = Children.map(children, child => {
+        if (isValidElement(child)) {
+            return cloneElement(child, taggedProps);
+        }
+        return child;
+    });
+
     return (
         <div className="field has-addons has-addons-centered" onClick={copyToClipboard}>
             <div className="control">
-                <a className="button tagger-copy-urls">
+                <a className="button">
                     {name}
                 </a>
             </div>
@@ -61,11 +71,12 @@ const TaggedLinkField = ({ name, keyword, value, contentId }: TaggedLinkFieldPro
                 <input
                     ref={inputRef}
                     readOnly={true}
-                    className="input tagger-social-urls"
+                    className="input"
                     type="text"
                     placeholder={placeholderUrl}
                     value={taggedUrl} />
             </div>
+            {taggedChildren}
         </div>
     );
 };

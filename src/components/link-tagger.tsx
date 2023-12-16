@@ -7,6 +7,9 @@
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation'
 import TaggedLinkField from '@/components/tagged-link-field'
+import ShareLinkFacebook from './share-link-facebook';
+import ShareLinkMastodon from './share-link-mastodon';
+import ShareLinkLinkedIn from './share-link-linkedin';
 
 export default function LinkTagger() {
     const searchParams = useSearchParams()
@@ -26,11 +29,17 @@ export default function LinkTagger() {
                 </div>
             </div>
 
-            <TaggedLinkField name="Mastodon" keyword="mastodon" value={inputUrl} />
+            <TaggedLinkField name="Mastodon" keyword="mastodon" value={inputUrl}>
+                <ShareLinkMastodon />
+            </TaggedLinkField>
             <TaggedLinkField name="Threads" keyword="threads" value={inputUrl} />
             <TaggedLinkField name="Bluesky" keyword="bluesky" value={inputUrl} />
-            <TaggedLinkField name="LinkedIn" keyword="linkedin" value={inputUrl} />
-            <TaggedLinkField name="Facebook" keyword="facebook" value={inputUrl} />
+            <TaggedLinkField name="LinkedIn" keyword="linkedin" value={inputUrl}>
+                <ShareLinkLinkedIn />
+            </TaggedLinkField>
+            <TaggedLinkField name="Facebook" keyword="facebook" value={inputUrl}>
+                <ShareLinkFacebook />
+            </TaggedLinkField>
             <TaggedLinkField name="WhatsApp Channel" keyword="whatsapp" contentId="channel" value={inputUrl} />
             <TaggedLinkField name="Reddit" keyword="reddit" value={inputUrl} />
             <TaggedLinkField name="Stackoverflow" keyword="stackoverflow" value={inputUrl} />

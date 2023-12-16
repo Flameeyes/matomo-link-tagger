@@ -18,6 +18,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdi/js": "^7.3.67",
+    "@mdi/react": "^1.6.1",
     "bulma": "^0.9.4",
     "next": "14.0.4",
     "next-pwa": "^5.6.0",

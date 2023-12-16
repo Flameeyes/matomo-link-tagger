@@ -3,8 +3,9 @@
 // SPDX-License-Identifier: MIT
 
 import type { Metadata } from 'next'
-import 'bulma/bulma.sass'
 import Image from 'next/image'
+
+import 'bulma/bulma.sass'
 
 export const metadata: Metadata = {
   title: 'Socials Link Tagger',
