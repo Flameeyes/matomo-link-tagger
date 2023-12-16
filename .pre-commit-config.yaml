@@ -17,10 +17,6 @@ repos:
         additional_dependencies:
           - eslint
           - eslint-plugin-react
--   repo: https://github.com/pre-commit/mirrors-scss-lint
-    rev: 'v0.60.0'
-    hooks:
-    -   id: scss-lint
 -   repo: https://github.com/fsfe/reuse-tool
     rev: v2.1.0
     hooks:
