@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT
 
 import type { Metadata } from 'next'
-import Image from 'next/image'
 
 import 'bulma/bulma.sass'
 
@@ -29,7 +28,11 @@ export default function RootLayout({
                 <div className="column is-8-desktop is-offset-2-desktop">
                   <p style={{ marginTop: '1rem' }}>
                     <a href="https://bulma.io">
-                      <Image src="/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24" />
+                      <img
+                        src="/images/made-with-bulma.png"
+                        alt="Made with Bulma"
+                        width="128" height="24"
+                      />
                     </a>
                   </p>
                 </div>
