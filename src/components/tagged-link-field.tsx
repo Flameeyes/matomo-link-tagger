@@ -6,6 +6,7 @@
 
 import { ShareGeneratorProps } from "@/lib/share-link-api";
 import { cloneElement, isValidElement, useRef, Children, PropsWithChildren } from "react";
+import ShareLinkDisabled from "./share-link-disabled";
 
 type TaggedLinkFieldProps = {
     name: string;
@@ -60,6 +61,8 @@ const TaggedLinkField = ({ name, keyword, value, contentId, children }: PropsWit
         return child;
     });
 
+    const finalChildren = taggedChildren || (<ShareLinkDisabled />);
+
     return (
         <div className="field has-addons has-addons-centered" onClick={copyToClipboard}>
             <div className="control">
@@ -76,7 +79,7 @@ const TaggedLinkField = ({ name, keyword, value, contentId, children }: PropsWit
                     placeholder={placeholderUrl}
                     value={taggedUrl} />
             </div>
-            {taggedChildren}
+            {finalChildren}
         </div>
     );
 };
