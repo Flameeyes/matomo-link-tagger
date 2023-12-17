@@ -42,7 +42,7 @@ export default function LinkTagger() {
             </TaggedLinkField>
             <TaggedLinkField name="WhatsApp Channel" keyword="whatsapp" contentId="channel" value={inputUrl} />
             <TaggedLinkField name="Reddit" keyword="reddit" value={inputUrl} />
-            <TaggedLinkField name="Stackoverflow" keyword="stackoverflow" value={inputUrl} />
+            <TaggedLinkField name="StackOverflow" keyword="stackoverflow" value={inputUrl} />
         </div>
 
     )
