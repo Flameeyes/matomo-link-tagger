@@ -12,6 +12,9 @@ const withPWA = require('next-pwa')({
 const prodConfig = {
     output: 'export',
     trailingSlash: true,
+    images: {
+        unoptimized: true
+    }
 }
 
 const devConfig = {
