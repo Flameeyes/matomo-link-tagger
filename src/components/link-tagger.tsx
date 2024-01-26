@@ -10,6 +10,7 @@ import TaggedLinkField from '@/components/tagged-link-field'
 import ShareLinkFacebook from './share-link-facebook';
 import ShareLinkMastodon from './share-link-mastodon';
 import ShareLinkLinkedIn from './share-link-linkedin';
+import ShareLinkThreads from './share-link-threads';
 
 export default function LinkTagger() {
     const searchParams = useSearchParams()
@@ -32,7 +33,9 @@ export default function LinkTagger() {
             <TaggedLinkField name="Mastodon" keyword="mastodon" value={inputUrl}>
                 <ShareLinkMastodon />
             </TaggedLinkField>
-            <TaggedLinkField name="Threads" keyword="threads" value={inputUrl} />
+            <TaggedLinkField name="Threads" keyword="threads" value={inputUrl}>
+                <ShareLinkThreads />
+            </TaggedLinkField>
             <TaggedLinkField name="Bluesky" keyword="bluesky" value={inputUrl} />
             <TaggedLinkField name="LinkedIn" keyword="linkedin" value={inputUrl}>
                 <ShareLinkLinkedIn />
